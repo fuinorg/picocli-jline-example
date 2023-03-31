@@ -1,19 +1,28 @@
-# quarkus-picocli-jline-example
-Quarkus picocli JLine Example with native build (GraalVM)
+# picoli-jline-example
+Demonstrates the combination of [Picoli](https://picocli.info/), [jline 3](https://github.com/jline/jline3) and [Quarkus 3](https://quarkus.io/blog/road-to-quarkus-3/) or [Spring Boot]() to build a command shell.
 
-- [Quarkus 3](https://quarkus.io/blog/road-to-quarkus-3/)
-- [picocli](https://picocli.info/)
-- [JLine 3](https://github.com/jline/jline3)
+## Modules
+- [quarkus](quarkus)
+- [spring-boot](spring-boot)
 
-## Native Build
-```
-./mvnw clean package -Dnative
-```
-(See Quarkus [Building a native executable](https://quarkus.io/guides/building-native-image#prerequisites) for required setup)
+## Build
+To build the project as "uber jar":
 
-## Run
 ```
-./target/quarkus-picocli-jline-example-1.0.0-SNAPSHOT-runner
+./mvwn clean package
+```
+
+### Run Quarkus Example
+```
+java -jar quarkus/target/example-shell-runner.jar
+```
+
+:information_source: You can create also a native executable. See [quarkus](quarkus) build information.
+
+
+### Run Spring Boot Example
+```
+java -jar spring-boot/target/example-shell-runner.jar
 ```
 
 ## Test
@@ -21,6 +30,3 @@ Quarkus picocli JLine Example with native build (GraalVM)
 - Try `help`
 - Try `cmd` with TAB for code completion
 - Type `exit` to leave shell
-
-## Limitations
-Tested only on Ubuntu (Windows may not work)

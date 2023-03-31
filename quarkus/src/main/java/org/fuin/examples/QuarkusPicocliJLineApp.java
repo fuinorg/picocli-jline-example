@@ -41,7 +41,7 @@ import picocli.shell.jline3.PicocliCommands.PicocliCommandsFactory;
  */
 @QuarkusMain
 @CommandLine.Command(name = "demo", mixinStandardHelpOptions = true)
-public class QuarkusPicocliJLineExample implements Runnable, QuarkusApplication {
+public class QuarkusPicocliJLineApp implements Runnable, QuarkusApplication {
 
 	@Inject
 	CommandLine.IFactory factory;
@@ -205,4 +205,5 @@ public class QuarkusPicocliJLineExample implements Runnable, QuarkusApplication 
 	public int run(String... args) throws Exception {
 		return new CommandLine(this, factory).execute(args);
 	}
+	
 }
